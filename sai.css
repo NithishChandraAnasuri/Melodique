@@ -1,0 +1,26 @@
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  cursor: none;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  scroll-behavior: smooth;
+  color: #e0e0e0;
+
+}
+
+.contain {
+  width: 97.5vw;
+  height: 97vh;
+  box-sizing: border-box;
+  border-radius: 15px;
+  /* background-color: #1a1a1d; */
+  margin: 10px;
+  position: absolute;
+  display: flex;
+}

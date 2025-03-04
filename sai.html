@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/Icons.jpg" type="image/png" sizes="64x64" />
+    <title>Melodique- Sai pallavi</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap CSS -->
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Font Awesome -->
+  </head>
+  <body>
+    <div class="contain">
+      <!-- ------------sidebar-------------- -->
+
+      <div class="sidebar">
+        <div class="close-menu">
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="lists">
+          <ul>
+            <li>
+              <a href="Home.html"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-music"></i> Library</a>
+            </li>
+            <li>
+              <a href="#" id="searchBtn"
+                ><i class="fas fa-search" id="Search"></i> Search</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-headphones"></i> Playlists</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-heart"></i> Favorites</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-user"></i> Profile</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- ---------------sidebar close--------------- -->
+
+      <!-- ------------------main section-------------------- -->
+      <div class="mainsection">
+        <!--   -----------------carousel start----------------- -->
+        <div class="d-block">
+          <div class="current first"></div>
+          <div class="current second"></div>
+
+          <div class="playing">
+            <h6>Vasantha Kaalangal</h6>
+
+            <div class="controls">
+              <i class="fa-solid fa-backward-step"></i>
+              <i class="fa-solid fa-backward"></i>
+              <i class="fa-solid fa-play"></i>
+              <i class="fa-solid fa-forward"></i>
+              <i class="fa-solid fa-forward-step"></i>
+            </div>
+
+            <div class="timestamp-container">
+              <p>2:45</p>
+              <div class="pursing">
+                <div class="completed"></div>
+              </div>
+              <p>4:00</p>
+            </div>
+
+            <div class="controls">
+              <i class="fa-solid fa-heart heart"></i>
+              <i class="fa-solid fa-shuffle"></i>
+            </div>
+          </div>
+        </div>
+        <!-- -----------------carousel ends----------------- -->
+
+        <!-- -----------------card start------------------ -->
+
+        <!-- -----------------card ends------------------ -->
+        <h2 id="Albums" style="color: #f5c518">Sai Pallavi</h2>
+        <div class="cards">
+          <a href=""
+            ><div
+              class="card"
+              style="
+                width: 13rem;
+                background-image: url(./assets/sai\ pallavi.jpeg);
+                border-radius: 25%;
+              "
+            ></div
+          ></a>
+          <div class="Top">
+            <h3>Top Songs</h3>
+            <ul>
+              <li>Rowdy Baby</li>
+              <li>Vachinde</li>
+              <li>Premante Enti</li>
+              <li>Saranga Dariya</li>
+              <li>Kaathuvaakula Rendu Kaadhal</li>
+            </ul>
+            <h3>Recently Played</h3>
+            <ul>
+              <li>Vaanam Thoorammalae</li>
+              <li>Kannu Thangom</li>
+              <li>Oorellipota</li>
+              <li>Yevandoi Nani Garu</li>
+              <li>Hamsaro</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ------------------------------playing ends-------------------- -->
+      </div>
+      <!-- --------------------main section closed--------------- -->
+
+      <!-- ----------------------right start------------------ -->
+      <div class="right">
+        <h1 id="text">
+          Melodique <br />
+          <p id="span">@Designed by NithishChandra</p>
+        </h1>
+        <a href="Home.html"><i class="fa-solid fa-house"></i></a>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <!-- -------------------------right ends---------------------------- -->
+    </div>
+
+    <!-- ---------------------Script start------------------------- -->
+
+    <!-- ------------------------script ends--------------------------- -->
+    <!-- ---------------------Script start------------------------- -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

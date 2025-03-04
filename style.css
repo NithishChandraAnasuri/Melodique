@@ -1,0 +1,838 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Fade-Out Effect on Link Click */
+a {
+  transition: opacity 1.8s ease-in-out;
+}
+
+a:active {
+  opacity: 0;
+}
+.cursor-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: #f5c518; /* White dot for black theme */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  transition: transform 0.1s ease-in-out;
+}
+
+.cursor-dot::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  top: -7px;
+  left: -7px;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  cursor: none;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  scroll-behavior: smooth;
+  color: #e0e0e0;
+  /* animation: fadeIn 1.8s ease-in-out; */
+  transition: opacity 1.5s ease-in-out; /* Smooth transition */
+}
+
+/* Fade-out effect when leaving the page */
+.fade-out {
+  opacity: 0;
+}
+
+.contain {
+  width: 97.5vw;
+  height: 97vh;
+  box-sizing: border-box;
+  border-radius: 15px;
+  /* background-color: #1a1a1d; */
+  margin: 10px;
+  position: absolute;
+  display: flex;
+}
+
+/* ---------------------sidebar--------------------- 
+ *                                                        *
+ *                      start                             *
+ *                                                        *
+ *                                                        *
+---------------------sidebar--------------------- */
+
+.sidebar {
+  width: 15vw !important;
+  height: 95vh;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: white;
+  /* background-color: #E0E0E0;; */
+}
+/* Hamburger Button */
+.hamburger-menu {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 1100;
+  background: #333;
+  padding: 10px;
+  border-radius: 5px;
+  display: none; /* Hidden by default */
+}
+/* Close Button */
+.close-menu {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+/* Show Sidebar */
+.sidebar.open {
+  left: 0;
+}
+.lists {
+  width: 100%;
+  padding: 10px;
+}
+
+.lists ul {
+  list-style: none;
+  /* background-color: #444; */
+  padding: 0;
+  margin: 0;
+}
+
+.lists li {
+  margin: 15px 0;
+}
+
+.lists a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #444;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.lists a i {
+  margin-right: 10px;
+  font-size: 20px;
+  /* background-color: #888; */
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.lists a:hover {
+  background-color: #333;
+  color: white;
+}
+
+.lists a:hover i {
+  color: white;
+}
+
+/* ---------------------sidebar--------------------- 
+ *                                                        *
+ *                      ends                             *
+ *                                                        *
+ *                                                        *
+---------------------sidebar--------------------- */
+.mainsection {
+  width: 70vw;
+  height: 95vh;
+  margin: 5px;
+  background-color: rgb(13, 13, 13);
+  border-radius: 20px;
+  /* overflow: hidden; */
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  gap: 20px;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom Smooth Scrolling Effect */
+.mainsection::-webkit-scrollbar {
+  display: none;
+}
+.right {
+  width: 20vw;
+  height: 95vh;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: white;
+  /* background-color: #E0E0E0;; */
+}
+.d-block {
+  width: 90%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px auto;
+  border-radius: 20px;
+ 
+  background: rgb(255, 255, 255);
+   backdrop-filter: blur(10px);
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  position: relative;
+}
+
+.current {
+  width: 180px;
+  height: 180px;
+  left: 5px;
+  border-radius: 15px;
+  background-image: url(./assets/76.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+.first {
+  position: relative;
+  background-image: url(./assets/76.jpeg);
+  z-index: 2;
+}
+.second {
+  position: absolute;
+  background-image: url(./assets/anan.jpeg);
+  top: 21px; /* Positioned below */
+  left: 16px; /* Shifted slightly to the right */
+  z-index: 1;
+  opacity: 0.9; /* Slightly faded to look behind */
+}
+/* Hover Effect for a Dynamic Feel */
+.first:hover {
+  transform: translateY(-5px);
+  box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.second:hover {
+  transform: translateY(-3px) translateX(-5px);
+  box-shadow: 4px 6px 18px rgba(0, 0, 0, 0.65);
+}
+.current:hover {
+  transform: scale(1.05);
+}
+/* Album Section */
+#Albums {
+  color: #f5c518;
+  margin-left: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
+}
+
+/* ---------------------Playing controls--------------------- 
+ *                                                        *
+ *                                                        *
+ *                                                        *
+ *                                                        *
+---------------------Playing controls--------------------- */
+.playing {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  width: 65%;
+  margin-top: -130px;
+  margin-left: 200px;
+  padding: 15px;
+  border-radius: 30px;
+  background: linear-gradient(to right, #333, #222);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+  gap: 10px;
+  text-align: center;
+}
+
+/* Song Title */
+.playing h6 {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+/* Controls Row */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Progress Bar Container */
+.pursing {
+  width: 80%;
+  height: 6px;
+  background: #222;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  margin-top: 8px;
+}
+
+/* Progress Bar */
+.completed {
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(to right, #fff, #aaa);
+  border-radius: 10px;
+  transition: width 1.3s ease-in-out;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+/* Controls */
+.fa-play,
+.fa-house,
+.fa-magnifying-glass,
+.fa-backward-step,
+.fa-forward-step,
+.fa-backward,
+.fa-forward,
+.fa-heart,
+.fa-bars,
+.fa-shuffle {
+  font-size: 20px;
+  color: #f2f2f2;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.fa-play:hover,
+.fa-backward:hover,
+.fa-forward:hover,
+.fa-heart:hover,
+.fa-shuffle:hover {
+  color: white;
+  transform: scale(1.2);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Like button effect */
+.heart.liked {
+  color: red !important;
+  transform: scale(1.2);
+}
+
+/* Timestamp styling */
+.timestamp-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 5px;
+}
+
+.timestamp-container p {
+  color: white;
+  font-size: 14px;
+  margin: 0;
+}
+/* ---------------------Playing controls--------------------- 
+ *                                                        *
+ *                         Ends                           *
+ *                                                        *
+ *                                                        *
+---------------------Playing controls--------------------- */
+
+#text {
+  text-align: center;
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
+  font-weight: 200;
+  /* color: #f5c518; */
+}
+#design {
+  margin-top: 200%;
+  font-weight: 200;
+  font-size: small;
+  margin-left: 30px;
+}
+.heart {
+  font-size: 20px;
+  color: #e3e3e3;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.heart.liked {
+  color: black;
+}
+.cards {
+  width: 90%;
+  height: 230px;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 15px;
+  padding-bottom: 10px;
+  margin-left: 30px;
+  cursor: pointer;
+  /* background: rgb(255, 255, 255); */
+  border-radius: 10px;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.2);
+}
+.card,
+.cardd,
+.carddd,
+.car,
+.ca {
+  flex: 0 0 auto;
+  width: 13rem;
+  /* margin: 5px; */
+}
+
+/* Scrollbar Styling */
+.cards::-webkit-scrollbar {
+  height: 6px;
+}
+
+.cards::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.cards::-webkit-scrollbar-track {
+  background: transparent;
+}
+.card {
+  margin: 10px;
+  width: 13rem;
+  height: 220px;
+  background-image: url(./assets/Premam.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cardd {
+  margin: 10px;
+  background-image: url(./assets/Pranaya\ Vilasam\ -2023\ Indian\ Malayalam\ movie.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 220px !important;
+  object-fit: cover;
+}
+.carddd {
+  margin: 10px;
+  background-image: url(./assets/anan.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 220px !important;
+  object-fit: cover;
+}
+.car {
+  margin: 10px;
+  background-image: url(./assets/Manjummal\ Boys.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 220px !important;
+  object-fit: cover;
+}
+.ca {
+  margin: 10px;
+  background-image: url(./assets/Bgm.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 220px !important;
+  object-fit: cover;
+}
+
+#span {
+  font-size: small;
+  font-weight: 300;
+  bottom: 10px;
+  font-family: "Atkinson Hyperlegible Next";
+}
+/* Overlay text styling */
+.overlay-text {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.search-tab {
+  position: absolute;
+  top: 100px;
+  left: 150px;
+  width: 200px;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+  border: 2px solid black;
+  flex-direction: column;
+}
+
+.search-tab input {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.search-tab ul {
+  list-style: none;
+  padding: 0;
+}
+
+.search-tab ul li {
+  padding: 8px;
+  background: #ffffff;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-tab ul li:hover {
+  background: #555;
+}
+/* --------------------Top------------------------- */
+
+/* Small Devices (Phones, 768px and down) */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .contain {
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column; /* Stack elements */
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    /* background-color: #1a1a1d; */
+    position: absolute;
+  }
+
+  .mainsection {
+    width: 95vw;
+    height: 60vh;
+    /* display: none; */
+  }
+
+  #design {
+    margin-top: 20px;
+    font-size: small;
+    font-weight: 300;
+    margin-left: 120px;
+  }
+  .d-block {
+    width: 80vw !important;
+    margin-left: 100px;
+  }
+
+  #text {
+    display: none;
+  }
+
+  .cards {
+    width: 90vw !important;
+    margin-left: 10px;
+    overflow-y: scroll;
+  }
+  .mainsection {
+    height: 80vh;
+  }
+  .d-block {
+    margin-left: 5px;
+    width: 95% !important;
+  }
+  .first {
+    width: 140px;
+    height: 140px;
+  }
+  .second {
+    width: 150px;
+    height: 140px;
+  }
+
+  .playing {
+    width: 60%;
+    height: auto;
+    margin: 20px auto;
+    padding: 10px;
+    gap: 8px;
+    margin-top: -140px;
+    margin-left: 155px;
+  }
+  .playing h6 {
+    font-size: 14px;
+  }
+  .controls {
+    gap: 8px;
+  }
+  .fa-play,
+  .fa-backward,
+  .fa-forward {
+    font-size: 16px;
+  }
+  .timestamp-container {
+    width: 90%;
+    font-size: 12px;
+  }
+  .sidebar {
+    display: none;
+  }
+  .items {
+    display: flex; /* Make them visible */
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .items i {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, color 0.3s ease;
+  }
+
+  .items i:hover {
+    transform: scale(1.2);
+    color: #ddd;
+  }
+
+  #text {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  #span {
+    font-size: 14px;
+  }
+  .right {
+    height: 100px;
+    background-color: black;
+    width: 96%;
+  }
+  .right .fa-solid {
+    margin-top: 40px;
+    margin-left: 70px;
+    transition: 1s ease-in-out;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Medium Devices (Tablets, 768px and down) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contain {
+    width: 98vw;
+    height: 98vh;
+    margin: 5px;
+    display: flex;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 95vh;
+    border-radius: 15px;
+  }
+  .footer {
+    display: none;
+  }
+  #lists {
+    display: none;
+  }
+  .items {
+    display: none;
+  }
+  .right .fa-solid {
+    display: none;
+  }
+}
+
+/* Large Devices (Laptops, 992px and down) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .contain {
+    width: 97vw;
+    height: 97vh;
+  }
+
+  .sidebar {
+    width: 30vw; /* Slightly increase for better view */
+  }
+  #lists {
+    display: none;
+  }
+  .items {
+    display: none;
+  }
+  .right .fa-solid {
+    display: none;
+  }
+}
+
+/* Extra Large Devices (Desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .contain {
+    width: 99vw;
+    height: 97vh;
+  }
+
+  .sidebar {
+    width: 25vw;
+    height: 95vh;
+  }
+  .footer {
+    display: none;
+  }
+  #lists {
+    display: none;
+  }
+  .items {
+    display: none;
+  }
+  .fa-solid {
+    display: none;
+  }
+  .right .fa-solid {
+    display: none;
+  }
+}
+
+/* ---------------------wrapper style------------------------ */
+/* From Uiverse.io by mobinkakei */
+.wrapper {
+  width: 200px;
+  height: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #141414;
+  left: 15%;
+  transform-origin: 50%;
+  animation: circle7124 0.5s alternate infinite ease;
+}
+
+@keyframes circle7124 {
+  0% {
+    top: 60px;
+    height: 5px;
+    border-radius: 50px 50px 25px 25px;
+    transform: scaleX(1.7);
+  }
+
+  40% {
+    height: 20px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
+.circle:nth-child(2) {
+  left: 45%;
+  animation-delay: 0.2s;
+}
+
+.circle:nth-child(3) {
+  left: auto;
+  right: 15%;
+  animation-delay: 0.3s;
+}
+
+.shadow {
+  width: 20px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 62px;
+  transform-origin: 50%;
+  z-index: -1;
+  left: 15%;
+  filter: blur(1px);
+  animation: shadow046 0.5s alternate infinite ease;
+}
+
+@keyframes shadow046 {
+  0% {
+    transform: scaleX(1.5);
+  }
+
+  40% {
+    transform: scaleX(1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scaleX(0.2);
+    opacity: 0.4;
+  }
+}
+
+.shadow:nth-child(4) {
+  left: 45%;
+  animation-delay: 0.2s;
+}
+
+.shadow:nth-child(5) {
+  left: auto;
+  right: 15%;
+  animation-delay: 0.3s;
+}
