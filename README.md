@@ -39,7 +39,9 @@ Contributions are welcome! If you would like to improve or add new features, fol
 ## License
 This project is licensed under the terms of the [MIT License](LICENSE).
 
-## 📞 Contact
-Email: Nithishchandra2k@gmail.com
-LinkedIn: https://www.linkedin.com/in/nithish-chandra-anasuri-411017290/
-GitHub: https://github.com/NithishChandraAnasuri
+## Contact
+For any inquiries or feedback, feel free to reach out:
+- **Email:** Nithishchandra2k@gmail.com
+- **GitHub:** [https://github.com/nithishchandraanasuri](https://github.com/nithishchandraanasuri)
+
+
